@@ -1,4 +1,4 @@
-# Code adapted or modified from PPT_Net repo: https://github.com/jac99/MinkLoc3Dv2
+# Code adapted or modified from MinkLoc3DV2 repo: https://github.com/jac99/MinkLoc3Dv2
 import numpy as np
 from typing import List
 from abc import ABC, abstractmethod

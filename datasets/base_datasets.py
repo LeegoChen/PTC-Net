@@ -1,4 +1,4 @@
-# Code adapted from PPT_Net repo: https://github.com/jac99/MinkLoc3Dv2
+# Code adapted or modified from MinkLoc3DV2 repo: https://github.com/jac99/MinkLoc3Dv2
 # Base dataset classes, inherited by dataset-specific classes
 import os
 import pickle

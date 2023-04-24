@@ -1,4 +1,4 @@
-# Code adapted or modified from PPT_Net repo: https://hub.fastgit.xyz/jac99/MinkLoc3D
+# Code adapted or modified from MinkLoc3D repo: https://hub.fastgit.xyz/jac99/MinkLoc3D
 import numpy as np
 
 
