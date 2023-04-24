@@ -1,4 +1,4 @@
-# PTC-Net: Point-Wise Transformer with Sparse Convolution Network for Place Recognition
+# [PTC-Net: Point-Wise Transformer with Sparse Convolution Network for Place Recognition](https://ieeexplore.ieee.org/document/10103149)
 
 by  Lineng Chen,
     Huan Wang,
