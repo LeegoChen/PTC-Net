@@ -1,0 +1,31 @@
+[DEFAULT]
+
+dataset_folder = /datasets/pointNetVLAD
+
+[TRAIN]
+num_workers = 12
+# 2048, 1536, 96
+batch_size = 96
+# 128, 96
+batch_split_size = 0
+val_batch_size = 96
+
+lr = 1e-3
+# 400, 60
+epochs = 400
+# 250, 350,  30
+scheduler_milestones = 250, 350
+
+aug_mode = 1
+weight_decay = 1e-4
+
+# TruncatedSmoothAP, batchhardtripletmarginloss
+loss = batchhardtripletmarginloss
+margin = 0.4
+tau1 = 0.01
+positives_per_query = 4
+
+train_file = training_queries_baseline2.pickle
+#val_file = test_queries_baseline2.pickle
+
+

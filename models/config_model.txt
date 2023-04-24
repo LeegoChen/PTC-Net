@@ -1,0 +1,9 @@
+[MODEL]
+model=PTC-Net
+#model=PTC-Net-L
+
+coordinates=cartesian
+quantization_step= 0.01
+
+
+
