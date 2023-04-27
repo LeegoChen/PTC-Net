@@ -104,9 +104,9 @@ If you find this work useful, please consider citing:
       journal={IEEE Robotics and Automation Letters}, 
       title={PTC-Net: Point-Wise Transformer With Sparse Convolution Network for Place Recognition}, 
       year={2023},
-      volume={},
-      number={},
-      pages={1-8},
+      volume={8},
+      number={6},
+      pages={3414-3421},
       doi={10.1109/LRA.2023.3267693}}
 
 ### License
