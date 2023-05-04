@@ -72,7 +72,7 @@ def make_collate_fn(dataset: TrainingDataset, quantizer, batch_split_size=None):
         # Convert to polar (when polar coords are used) and quantize
         # Use the first value returned by quantizer
         coords = [quantizer(e)[0] for e in clouds]
-        if batch_split_size is None or batch_split_size == 0:  # 不需要分离，直接整体打包
+        if batch_split_size is None or batch_split_size == 0:
             coords = ME.utils.batched_coordinates(coords)
             # Assign a dummy feature equal to 1 to each point
             feats = torch.ones((coords.shape[0], 1), dtype=torch.float32)
@@ -83,7 +83,7 @@ def make_collate_fn(dataset: TrainingDataset, quantizer, batch_split_size=None):
             # Split the batch into chunks
             batch = []
 
-            for i in range(0, len(coords), batch_split_size):  # 分块
+            for i in range(0, len(coords), batch_split_size):
                 temp = coords[i:i + batch_split_size]
                 c = ME.utils.batched_coordinates(temp)
                 f = torch.ones((c.shape[0], 1), dtype=torch.float32)
