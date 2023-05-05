@@ -442,7 +442,7 @@ class FTU(nn.Module):
         weight = dist_recip / norm
         # (b, c, n)
         interpolated_feats = pointops.interpolation(f_tensor.transpose(1, 2).contiguous(), idx,
-                                                    weight)  # known_feats, 插值得到的在xyz_t处f_tensor相同维度的特征
+                                                    weight)  # known_feats
         interpolated_feats = self.act(self.ln(interpolated_feats.transpose(1, 2)))  # LayerNorm  b,n,c
         interpolated_feats = interpolated_feats.transpose(1, 2).contiguous()
 
@@ -572,7 +572,7 @@ class Group_SA(nn.Module):
             if self.gp != 1:
                 self.cross_trans_block2 = Cross_SA_Layer(inplanes, shared_gp=shared_gp, group=group, FFN=FFN)
             else:
-                self.cross_trans_block2 = SA_Layer(inplanes, gp=shared_gp, FFN=FFN)  # 是否FFN
+                self.cross_trans_block2 = SA_Layer(inplanes, gp=shared_gp, FFN=FFN)
 
     def forward(self, feat, feat2=None, interval=True):
         # ---step.1 interval group feat---------------------------------- #
@@ -586,7 +586,7 @@ class Group_SA(nn.Module):
             ind = torch.arange(0, N, self.gp, dtype=torch.int64, device="cuda")
             feat = feat.transpose(1, 2)  # B x N x C
             for i in range(self.gp):
-                group_feat.append(torch.index_select(feat, 1, ind + i))  # 默认间隔采样, 按batch先抽完第一组,然后依次
+                group_feat.append(torch.index_select(feat, 1, ind + i))
             group_feat = torch.vstack(group_feat)  # gp*B,N/gp,C
             group_feat = group_feat.transpose(1, 2)  # gp*B,C,N/gp
             if feat2 is not None:
