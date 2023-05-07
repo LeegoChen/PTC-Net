@@ -100,7 +100,7 @@ Note that our training code refers to MinkLoc3Dv2. For more details of the train
 If you find this work useful, please consider citing:
 
     @ARTICLE{10103149,
-      author={Lineng, Chen and Huan, Wang and Hui, Kong and Wankou, Yang and Mingwu, Ren},
+      author={Chen, Lineng and Wang, Huan and Kong, Hui and Yang, Wankou and Ren, Mingwu},
       journal={IEEE Robotics and Automation Letters}, 
       title={PTC-Net: Point-Wise Transformer With Sparse Convolution Network for Place Recognition}, 
       year={2023},
